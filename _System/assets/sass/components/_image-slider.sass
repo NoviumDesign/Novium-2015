@@ -1,0 +1,72 @@
+.image-slider, .image-slider .slide
+  height: $image-slider-height-mobile
+
+  +breakpoint($medium-screen)
+    height: $image-slider-height-tablet
+
+  +breakpoint($large-screen)
+    height: $image-slider-height-desktop
+
+.image-slider .slide
+  width: 100%
+  display: block
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+
+  &:hover
+    border-bottom: none
+
+  div
+    padding-top: 130px
+
+  span
+    display: none
+    max-width: 370px
+    padding-left: 15px
+    padding-right: 15px
+
+    +breakpoint($medium-screen)
+      display: block
+      padding: 0
+
+  &:hover
+    text-decoration: none
+
+.background--light .slide span
+  color: black
+
+.background--dark .slide span
+  color: white
+
+.owl-theme .owl-dots .owl-dot span
+  background: none
+  border: 1px solid white
+  +transition(all 0.5s linear)
+
+  &:hover
+    background: white
+    border-color: white
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span,
+  background: white
+  border-color: white
+
+.background--light .owl-dots
+  .owl-dot span
+    border-color: black
+
+  .owl-dot.active span,
+  .owl-dot:hover span,
+    background: black
+    border-color: black
+
+.background--dark .owl-dots
+  .owl-dot span
+    border-color: white
+
+  .owl-dot.active span,
+  .owl-dot:hover span,
+    background: white
+    border-color: white

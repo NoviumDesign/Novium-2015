@@ -1,0 +1,117 @@
+body.navActive // For disabling scroll on active mobile nav
+  overflow: hidden
+
+header
+  padding-top: 15px
+  position: absolute
+  left: 0
+  right: 0
+  z-index: 9999
+  font-size: $small-font-size
+
+  .logo
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 9999
+    background-image: url('/_System/assets/img/logo-white.png')
+    height: 39px
+    background-repeat: no-repeat
+    +transition(background-image 0.5s linear)
+
+  .nav-container
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    z-index: 99
+
+  .nav-toggle
+    display: block
+    margin-left: auto
+    margin-right: auto
+    width: 39px
+    height: 39px
+    line-height: 39px
+    cursor: pointer
+    background-image: url('/_System/assets/img/arrow-down-white.svg')
+    background-size: 39px 39px
+    z-index: 9999
+    +transition(all 0.2s linear)
+
+    &.active
+      background-image: url('/_System/assets/img/arrow-down-white.svg') !important
+      -ms-transform: rotate(180deg)
+      -webkit-transform: rotate(180deg)
+      transform: rotate(180deg)
+
+  .mobile-nav
+    position: fixed
+    width: 100%
+    text-align: center
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+    background: $base-background-color
+    padding-top: 69px
+    @include transform(translateY(-100%))
+    @include transition(transform 0.5s ease-in-out)
+
+    &.active
+      @include transform(translateY(0%))
+
+    a
+      font-size: $base-font-size
+
+
+  .desktop-nav
+    display: none
+
+  @include breakpoint($medium-screen)
+
+    .mobile-nav,
+    .nav-toggle
+      display: none
+
+    .logo
+      @include span(6 of 12)
+
+      &:hover
+        border-bottom: none
+
+    .desktop-nav
+      display: block
+      margin-top: 9px
+      @include span(last 6 of 12)
+
+      li
+        display: inline
+        margin-right: 45px
+
+        a
+          @include transition(color 0.5s linear)
+
+  &.background--dark
+    .desktop-nav a
+      color: white
+
+    .nav-toggle
+      background-image: url('/_System/assets/img/arrow-down-white.svg')
+
+    .logo
+      background-image: url('/_System/assets/img/logo-white.png')
+
+  &.background--light, .background--complex
+    .desktop-nav a
+      color: black
+
+      &:hover
+        border-bottom: 1px solid black
+
+    .nav-toggle
+      background-image: url('/_System/assets/img/arrow-down-black.svg')
+
+    .logo
+      background-image: url('/_System/assets/img/logo-black.png')

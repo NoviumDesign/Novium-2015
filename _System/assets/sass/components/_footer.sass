@@ -1,0 +1,19 @@
+footer
+
+  @include container(1200px)
+  border-top: 1px solid #4A4A4A
+  padding-top: 10px
+  font-size: $small-font-size
+
+  ul
+    @include(full no gutter)
+    margin-bottom: 15px
+
+  @include breakpoint($medium-screen)
+    margin-bottom: 25px
+
+    ul
+      margin-bottom: 0
+      @include span(3 of 12)
+      &:last-child
+        margin-right: 0

@@ -1,0 +1,40 @@
+section.case-grid
+  padding-left: 15px
+  padding-right: 15px
+
+  a
+    position: relative
+    background-color: black
+    text-align: center
+
+    .text-container
+      position: absolute
+      visibility: hidden
+      left: 0
+      right: 0
+      top: 50%
+      margin-top: -39px
+      display: inline
+
+    &:hover
+      border-bottom: none
+
+      .text-container
+        visibility: visible
+        color: white
+        @include transition(all 0.2s ease)
+
+      img
+        opacity: 0.2
+        @include transition(all 0.2s ease)
+
+  @include container(1200px)
+  a
+    @include span(full no-gutter)
+    display: block
+  img
+    display: block
+
+  @include breakpoint($medium-screen)
+    a
+      @include span(50% no-gutter)

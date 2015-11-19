@@ -1,0 +1,17 @@
+section.text-section
+  padding-top: 33px
+  margin-bottom: 44px
+
+  @include container(1200px)
+  .left,
+  .right
+    @include span(full no-gutter)
+
+  @include breakpoint($medium-screen)
+    .left
+      @include span(6 of 12)
+    .right
+      @include span(last 6 of 12)
+
+  .title
+    margin-bottom: 30px

@@ -1,0 +1,11 @@
+$medium-screen: em(640);
+$large-screen: em(860);
+
+$susy: (
+  container: em(1200px)
+);
+
+.container {
+  @include container(1200px);
+  position: relative;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Novium",
+  "version": "1.0.0",
+  "authors": [
+    "Anton Kjörck Lindén <anton@noviumdesign.se>"
+  ],
+  "description": "Site for Novium",
+  "main": "Gruntfile.js",
+  "license": "Private",
+  "homepage": "www.noviumdesign.se",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,47 @@
+.case-hero-header
+  margin-top: 17px
+
+  +breakpoint($medium-screen)
+    position: absolute
+    top: 120px
+    left: 0
+    right: 0
+    margin-top: 0
+
+  .case-hero-header-container
+    @include container(1200px)
+    padding-left: 15px
+    padding-right: 15px
+
+    h1
+      font-size: 30px
+      line-height: 31px
+      margin-bottom: 12px
+      +transition(color 0.5s linear)
+
+      +breakpoint($medium-screen)  
+        font-size: 50px
+        max-width: 40%
+        line-height: 51px
+
+      &.background--light
+        color: black
+
+      &.background--dark
+        color: white
+
+section.case-images
+  @include container(1200px)
+  .left,
+  .right
+    @include span(full no-gutter)
+
+  @include breakpoint($medium-screen)
+    .left
+      @include span(6 of 12)
+    .right
+      @include span(last 6 of 12)
+
+  img
+    display: block
+    width: 100%
